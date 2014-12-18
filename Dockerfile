@@ -6,24 +6,40 @@ ENV RUBY_MAJOR 2.1
 ENV RUBY_VERSION 2.1.5
 ENV RUBY_SRC_DIR /usr/src/ruby
 
-RUN apt-get update -qqy \
-  && apt-get install -qqy \
-    curl \
-    procps \
-  && rm -rf /var/lib/apt/lists/*
-
+# Essentials
 RUN apt-get update -qqy \
   && apt-get install -qqy \
     autoconf \
-    bison \
-    gcc \
-    libncurses5-dev \
+    build-essential \
+    curl \
+    git \
+    imagemagick \
+    libbz2-dev \
+    libcurl4-openssl-dev \
+    libevent-dev \
+    libffi-dev \
+    libglib2.0-dev \
+    libjpeg-dev \
+    libmagickcore-dev \
+    libmagickwand-dev \
+    libmysqlclient-dev \
+    libncurses-dev \
+    libpq-dev \
     libreadline-dev \
+    libsqlite3-dev \
     libssl-dev \
-    make \
-    openssl \
-    ruby \
+    libxml2-dev \
+    libxslt-dev \
+    libyaml-dev \
+    procps \
     zlib1g-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+# Ruby specifics
+RUN apt-get update -qqy \
+  && apt-get install -qqy \
+    bison \
+    ruby \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir -p $RUBY_SRC_DIR \
   && curl -s -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.bz2" \
