@@ -2,6 +2,7 @@
 
 This image compiles Ruby from source on top of Ubuntu 14.04.
 
+*WARNING* This image is in development.
 
 # Versions
 
@@ -14,7 +15,7 @@ This image compiles Ruby from source on top of Ubuntu 14.04.
 
 As expected, use it in the `FROM` instruction.
 
-    FROM arnau/ruby:2.1.5
+    FROM ustwo/ruby:2.1.5
     # your instructions
 
 ## Single run
