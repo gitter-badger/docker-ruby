@@ -24,7 +24,7 @@ As expected, use it in the `FROM` instruction.
       -v "$(pwd)":/usr/local/foo \
       -w /usr/local/foo \
       arnau/ruby:2.1.5 \
-      ruby your-daemon-or-script.rb
+      ruby foo.rb
 
 
 # License
